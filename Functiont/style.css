@@ -1,0 +1,12 @@
+:root{
+    --text_color: rgb(255, 0, 0);
+    --accent: rgb(0,0,255);
+}
+
+#part-link{
+    font-size:large;
+    color: var(--text_color);
+}
+#part-link:hover{
+    color:var(--accent);
+}
