@@ -7,6 +7,25 @@
 </head>
 <body>
     <h1>Web Assembly 0.1</h1>
+    <div>
+        <p>Hi, This website is my first creation of page that included WebAssembly<br>
+        On the development</p>
+        <p>Long story short, Functions for this page is created in C++ then
+            <br>Assambled or Builded to being an .wasm file <br>
+            The .wasm is being "glued" with javascript and that javascript<br>
+            Is attached to this pages
+        </p>
+        <p style="margin: 0;">
+            What the page itself do is:<br>
+            <ul style="margin: 0;">
+                <li style="list-style: none;">
+                    Getting input from user<br>
+                    Then called function to processing the input<br>
+                    print the result
+                </li>
+            </ul>
+        </p>
+    </div>
 
     <script>
         function circle(){
@@ -62,7 +81,8 @@
         }
     </script>
 
-    <ul>
+    <h3 style="margin: 0;">The Things:</h3>
+    <ul style="margin: 0;">
         <li>
             <h2>Circle</h2>
             <span>Radius:</span> <input type="number" id="r">
@@ -75,10 +95,11 @@
         </li>
     </ul>
 
-    <a href="https://alan-00280.github.io/Web-Assembly-0.1/" id="part-link">Back again</a>
-
-    <div>
+    <div id="message-box">
+        <p style="padding: 0; margin:0;">Output:</p>
         <p id="message"></p>
     </div>
+
+    <a href="https://alan-00280.github.io/Web-Assembly-0.1/" id="index-link">Back again</a>
 </body>
 </html>
