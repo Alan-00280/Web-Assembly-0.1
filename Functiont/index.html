@@ -1,0 +1,81 @@
+<!DOCTYPE>
+<html>
+<head>
+    <title>Web Assembly 0.1</title>
+    <script src="func.js"></script>
+</head>
+<body>
+    <h1>Web Assembly 0.1</h1>
+
+    <script>
+        function circle(){
+            var r = document.querySelector("#r").value;
+            var textareas = document.getElementById("message");
+
+            var result1 = Module.ccall(
+                "circle_area",
+                "number",
+                ["number"],
+                [r]
+            )
+
+            var result2 = Module.ccall(
+                "circle_circum",
+                "number",
+                ["number"],
+                [r]
+            )
+            
+            console.log( "Radius: " + r + "\n"
+                       + "Area: ~" + result1 + "\n"
+                       + "Cirumstances: ~" + result2 + "\n"
+            )
+
+            textareas.innerHTML = `Radius: ${r} <br> Area: ${result1} <br> Circumstances : ${result2}`;
+        }
+
+        function square(){
+            var a = document.querySelector("#a").value;
+            var textareas = document.getElementById("message");
+
+            var result1 = Module.ccall(
+                "square_area",
+                "number",
+                ["number"],
+                [a]
+            )
+
+            var result2 = Module.ccall(
+                "square_circum",
+                "number",
+                ["number"],
+                [a]
+            )
+
+            console.log( "Side: " + a + "\n"
+                       + "Area: " + result1 + "\n"
+                       + "Cirumstances: " + result2 + "\n"
+            )
+
+            textareas.innerHTML = `Side: ${a} <br> Area: ${result1} <br> Circumstances : ${result2}`;
+        }
+    </script>
+
+    <ul>
+        <li>
+            <h2>Circle</h2>
+            <span>Radius:</span> <input type="number" id="r">
+            <button onclick="circle()">find</button>
+        </li>
+        <li>
+            <h2>Square</h2>
+            <span>Side:</span> <input type="number" id="a">
+            <button onclick="square()">find</button>
+        </li>
+    </ul>
+
+    <div>
+        <p id="message"></p>
+    </div>
+</body>
+</html>
